@@ -30,7 +30,6 @@ This is a Quarto website.
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 ```{r}
-library(tidyverse)       # Collection of core R packages for data science (includes dplyr and tidyr)
 library(readxl)          # Reading data directly from Excel files (.xlsx)
 library(ggplot2)         # Data visualization/plotting
 library(ggsci)           # Scientific journal color palettes for ggplot2
