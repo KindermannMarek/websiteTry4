@@ -3,7 +3,7 @@ title: "KindermannMarek.github.io"
 subtitle: "Data analysis report"
 author: "Authors"
 format: 
-  html:  
+  html:
     embed-resources: true
     keep-md: false
     toc: true
@@ -25,8 +25,8 @@ markdown:
 project:
   type: default
   output-dir: output
-theme: darkly
-highlight-style: github-dark
+#theme: darkly
+highlight-style: atom-one-dark
 fontsize: 12 px
 code-block-bg: "#2D2D31"
 fontcolor: "#F5F5F5"
@@ -37,9 +37,7 @@ This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-Libraries used in this script:
-
-```{r libraries, warning=FALSE, message=FALSE, results=FALSE, include=TRUE, echo=TRUE}
+```{r}
 library(tidyverse)       # Collection of core R packages for data science (includes dplyr and tidyr)
 library(readxl)          # Reading data directly from Excel files (.xlsx)
 library(ggplot2)         # Data visualization/plotting
@@ -55,3 +53,10 @@ library(patchwork)       # Combining multiple ggplot2 plots into a single layout
 ```{r}
 1 + 1
 ```
+
+```{r}
+cat('Testing highlighting:\n')
+x <- 1:5
+print(x)
+```
+
