@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "KindermannMarek.github.io",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n1 + 1"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nLibraries used in this script:\n\n\nOpen code\nlibrary(tidyverse)       # Collection of core R packages for data science (includes dplyr and tidyr)\nlibrary(readxl)          # Reading data directly from Excel files (.xlsx)\nlibrary(ggplot2)         # Data visualization/plotting\nlibrary(ggsci)           # Scientific journal color palettes for ggplot2\nlibrary(brms)            # Bayesian regression modeling using Stan\nlibrary(bayesplot)       # Visualizations for MCMC and Bayesian model checking\nlibrary(tidybayes)       # Tools for manipulating and summarizing Bayesian posterior samples\nlibrary(loo)             # Leave-One-Out cross-validation and model comparison \nlibrary(knitr)           # Dynamic document generation (e.g., R Markdown tables)\nlibrary(patchwork)       # Combining multiple ggplot2 plots into a single layout\n\n\n\n\nOpen code\n1 + 1\n\n\n[1] 2"
   },
   {
     "objectID": "about.html",

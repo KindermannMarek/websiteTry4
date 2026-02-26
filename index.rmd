@@ -1,0 +1,57 @@
+---
+title: "KindermannMarek.github.io"
+subtitle: "Data analysis report"
+author: "Authors"
+format: 
+  html:  
+    embed-resources: true
+    keep-md: false
+    toc: true
+    toc-expand: 2
+    toc-depth: 4
+    toc-location: left
+    number-sections: true
+    number-depth: 4
+    code-fold: show
+    code-tools: true
+    code-summary: "Open code"
+    grid: 
+      body-width: 1000px
+      sidebar-width: 600px
+      margin-width: 100px
+editor: source
+markdown: 
+    wrap: 72
+project:
+  type: default
+  output-dir: output
+theme: darkly
+highlight-style: github-dark
+fontsize: 12 px
+code-block-bg: "#2D2D31"
+fontcolor: "#F5F5F5"
+monobackgroundcolor: "#3B3B3B"
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+Libraries used in this script:
+
+```{r libraries, warning=FALSE, message=FALSE, results=FALSE, include=TRUE, echo=TRUE}
+library(tidyverse)       # Collection of core R packages for data science (includes dplyr and tidyr)
+library(readxl)          # Reading data directly from Excel files (.xlsx)
+library(ggplot2)         # Data visualization/plotting
+library(ggsci)           # Scientific journal color palettes for ggplot2
+library(brms)            # Bayesian regression modeling using Stan
+library(bayesplot)       # Visualizations for MCMC and Bayesian model checking
+library(tidybayes)       # Tools for manipulating and summarizing Bayesian posterior samples
+library(loo)             # Leave-One-Out cross-validation and model comparison 
+library(knitr)           # Dynamic document generation (e.g., R Markdown tables)
+library(patchwork)       # Combining multiple ggplot2 plots into a single layout
+```
+
+```{r}
+1 + 1
+```
