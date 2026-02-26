@@ -2,10 +2,9 @@
 title: "KindermannMarek.github.io"
 subtitle: "Data analysis report"
 author: "Authors"
-format: 
+format:
   html:
     embed-resources: true
-    keep-md: false
     toc: true
     toc-expand: 2
     toc-depth: 4
@@ -15,22 +14,15 @@ format:
     code-fold: show
     code-tools: true
     code-summary: "Open code"
-    grid: 
+    grid:
       body-width: 1000px
       sidebar-width: 600px
       margin-width: 100px
-editor: source
-markdown: 
-    wrap: 72
+    highlight-style: atom-one-dark  # ✅ required for code coloring
+    theme: darkly                   # ✅ valid theme (Quarto auto-appplies)
 project:
-  type: default
+  type: website
   output-dir: output
-#theme: darkly
-highlight-style: atom-one-dark
-fontsize: 12 px
-code-block-bg: "#2D2D31"
-fontcolor: "#F5F5F5"
-monobackgroundcolor: "#3B3B3B"
 ---
 
 This is a Quarto website.
@@ -51,12 +43,13 @@ library(patchwork)       # Combining multiple ggplot2 plots into a single layout
 ```
 
 ```{r}
-1 + 1
-```
+#| echo: true
+#| output: hold  # ← keeps code + output together
+#| warning: false
+#| message: false
 
-```{r}
-cat('Testing highlighting:\n')
 x <- 1:5
 print(x)
+summary(x)
 ```
 
