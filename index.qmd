@@ -20,12 +20,17 @@ format:
       margin-width: 100px
     highlight-style: atom-one-dark  # ✅ required for code coloring
     theme: darkly                   # ✅ valid theme (Quarto auto-appplies)
+    bibliography: references.bib
+    references: true  
 project:
   type: website
   output-dir: output
 ---
 
+## Intro
 This is a Quarto website.
+
+Before reading this section, we recommend that you first read the following publication: [@bürkner2019]
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
