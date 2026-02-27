@@ -1,0 +1,64 @@
+/* css styles */
+/* Code block styling for R code chunks */
+code.sourceCode {
+  font-size: 0.85em;
+/* border: 1px solid #ffffff; /* White border */
+  padding: 12px 20px; /* Top/Bottom: 12px, Left/Right: 20px */
+  background-color: #2D2D31; /* Optional: matches your dark theme */
+}
+
+/* Inline code (e.g., `x <- 1`) */
+code {
+  color: #EEE8AA !important; /* Base color */
+  background-color: rgba(0, 0, 0, 0.3); /* Subtle background for visibility */
+  padding: 0.1em 0.3em;
+  border-radius: 1px;
+  font-size: 0.95em;
+}
+
+/* Block equations — center them */
+.equation {
+  text-align: center;
+  display: block;
+  margin: 1em auto;
+  width: fit-content;
+}
+
+/* Justify body text */
+body {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ✅ The visible frame/container: div.sourceCode */
+div.sourceCode {
+  background-color: #383838;      /* ✅ Match the area you see */
+  border-top: 3px solid #666666;   /* Thick top */
+  border-bottom: 3px solid #666666; /* Thick bottom */
+  border-left: 3px solid #3a3a3a;
+  border-right: 3px solid #3a3a3a;
+  border-radius: 5px;
+  margin: 1.2em 0;
+  padding: 0; /* Reset default padding — we'll put it on <pre> instead */
+}
+
+/* ✅ Inner <pre> block: contains actual code + padding */
+pre.sourceCode {
+  background-color: #2D2D31;      /* Darker than div */
+  padding: 12px 20px;             /* Code spacing */
+  margin: 0;                      /* No extra margin */
+  font-size: 0.85em;
+  overflow-x: auto;
+}
+
+/* ✅ Inner <code> block: syntax highlighting */
+code.sourceCode {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Optional: make headings more readable */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-align: left; /* override justify for headers */
+}
