@@ -43,6 +43,7 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 #| eval: true
 #| results: false
 
+library(tidyverse)       # Collection of core R packages for data science (includes dplyr and tidyr)
 library(readxl)          # Reading data directly from Excel files (.xlsx)
 library(ggplot2)         # Data visualization/plotting
 library(ggsci)           # Scientific journal color palettes for ggplot2
@@ -52,6 +53,11 @@ library(tidybayes)       # Tools for manipulating and summarizing Bayesian poste
 library(loo)             # Leave-One-Out cross-validation and model comparison 
 library(knitr)           # Dynamic document generation (e.g., R Markdown tables)
 library(patchwork)       # Combining multiple ggplot2 plots into a single layout
+
+# solve package conflicts:
+library(conflicted)
+conflicted::conflicts_prefer(dplyr::filter())
+conflicted::conflicts_prefer(dplyr::lag())
 ```
 
 ```{r}
