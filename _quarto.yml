@@ -33,6 +33,7 @@ website:
 format:
   html:
     theme: darkly
-    highlight-style: atom-one-dark
+    highlight-style: github
+    css: styles.css
     toc: true
 

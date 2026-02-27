@@ -18,9 +18,10 @@ format:
       body-width: 1000px
       sidebar-width: 600px
       margin-width: 100px
-    highlight-style: atom-one-dark  # ✅ required for code coloring
+    highlight-style: github  # ✅ required for code coloring
     theme: darkly                   # ✅ valid theme (Quarto auto-appplies)
     bibliography: references.bib
+    css: styles.css 
     references: true  
 project:
   type: website
@@ -30,11 +31,18 @@ project:
 ## Intro
 This is a Quarto website.
 
-Before reading this section, we recommend that you first read the following publication: [@bürkner2019]
+Before reading this section, we recommend that you first read the following publication: [@bürkner2019] Before reading this section, we recommend that you first read the following publication: [@bürkner2019]. Before reading this section, we recommend that you first read the following publication: [@bürkner2019]. Before reading this section, we recommend that you first read the following publication: [@bürkner2019]. Before reading this section, we recommend that you first read the following publication: [@bürkner2019]. Before reading this section, we recommend that you first read the following publication: [@bürkner2019].
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 ```{r}
+#| warning: false
+#| message: false
+#| include: true
+#| echo: true
+#| eval: true
+#| results: false
+
 library(readxl)          # Reading data directly from Excel files (.xlsx)
 library(ggplot2)         # Data visualization/plotting
 library(ggsci)           # Scientific journal color palettes for ggplot2
@@ -47,13 +55,102 @@ library(patchwork)       # Combining multiple ggplot2 plots into a single layout
 ```
 
 ```{r}
-#| echo: true
-#| output: hold  # ← keeps code + output together
 #| warning: false
 #| message: false
+#| include: true
+#| echo: true
+#| eval: true
+#| results: false
 
 x <- 1:5
 print(x)
 summary(x)
 ```
 
+```{r}
+#| warning: false
+#| message: false
+#| include: true
+#| echo: true
+#| eval: true
+
+# Function to perform model evaluation
+evaluate_bayesian_model <- function(fitted_model) {
+  ###  Summary of a fitted model
+  print(summary(fitted_model))
+  
+  ### Distribution of outcome vs. newly simulated data distribution
+  print(pp_check(fitted_model, type = "bars_grouped", group = "treat", ndraws = 50))
+  
+  ### "Leave-one-out extreme value diagnostic"
+  print(loo(fitted_model))
+}
+```
+
+
+## Load data
+
+Let's load our data, check the structure and assign the correct data type to each variable:
+
+# ```{r load data, warning=FALSE, message=FALSE, echo=TRUE}
+# #| warning: false
+# #| message: false
+# #| include: true
+# #| echo: true
+# #| eval: true
+# #| 
+# file_name <- "LPPO_CFU.xlsx"
+# sheet_name <-"CFU"
+# sheet_range <- "A1:N95"
+# file_path <- "C:/users/kindermann/Owncloud/4_biomedical_center/R2/1_bc/1_Projects/UOCHB_Rajman/data/21082025_SAureus_Prevent_1az5/LPPO_CFU2.xlsx"
+# data1.1 <- read_excel(file_path, sheet = sheet_name, range = sheet_range)
+# 
+# data1.1 <-
+#   data1.1 |>
+#   mutate(score = as.ordered(score),
+#          treat = as.factor(treat),
+#          cage = as.factor(cage),
+#          batch = as.factor(batch),
+#          ID = as.factor(ID),
+#          site = as.factor(site),
+#          CFU_mL = as.numeric(CFU_mL))
+#   
+# knitr::kable(data1.1)
+# ```
+
+
+```{r}
+load('b_fit1.1.0.RData')
+```
+
+```{r}
+#| label: fit1
+#| warning: false
+#| message: false
+#| include: true
+#| echo: true
+#| eval: false
+#| cache: true
+
+set.seed = 225
+
+bm1.1.0 <- bf(score2 ~ 1)
+
+fit1.1.0  <- brm(bm1.1.0,
+             data = data1.2,
+             family = acat("probit"),
+             warmup = 1000,
+             iter = 4000,
+             chains = 4, 
+             cores = 10,
+             control = list(adapt_delta = 0.99, max_treedepth = 15),
+             #save_all_pars = TRUE,
+             sample_prior = TRUE,
+             prior = c(prior(normal(0, 2), class = Intercept)))
+             
+fit1.1.0 <- add_criterion(fit1.1.0, "loo")
+
+save(fit1.1.0, file = "b_fit1.1.0.RData")
+```
+
+See the seeting in @(fit1).
